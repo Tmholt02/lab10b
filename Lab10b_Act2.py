@@ -44,11 +44,14 @@ def main():
     plt.xlabel("Day")
     ax_wind = ax_temp.twinx()
 
+    # Get the current title correct
     plt.title("Temperature vs Wind Speed")
 
+    # Prepare and plot the wind speeds
     wind_line = ax_wind.plot(winds, label="Wind avg, mph", color='blue')
     ax_wind.set_ylabel("Average Wind Speed (mph)", color='blue')
 
+    # Prepare and plot the temperatures
     temp_line = ax_temp.plot(temps, label="Temp avg, F", color='red')
     ax_temp.set_ylabel("Average Temperature (F)", color='red')
 
@@ -70,6 +73,15 @@ def main():
     graph.bar(in_rain[1:-1], days[1:], in_rain[1] - in_rain[0], align="edge")
 
     ######################################################################################
+
+    # Select and label up the graph
+    graph = plt.subplot(2, 2, 3)
+    plt.title("Wind Speed vs Temp Low")
+    graph.set_ylabel("Average Wind Speed (mph)")
+    plt.xlabel("Minimum Temperature (F)")
+
+    # Plot the values I guess
+    graph.scatter(temps_min, winds, color='black', s=2)
 
     ######################################################################################
 
