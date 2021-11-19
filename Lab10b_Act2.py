@@ -8,8 +8,6 @@
 # Date:         11/19/2021
 
 # import dependencies
-from typing import List
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -84,6 +82,8 @@ def main():
     graph.scatter(temps_min, winds, color='black', s=2)
 
     ######################################################################################
+
+
 
     ######################################################################################
 
