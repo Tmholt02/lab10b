@@ -59,10 +59,15 @@ def main():
 
     ######################################################################################
 
-    precips_arr = np.array(precips)
-    print()
-    for val in np.where(precips_arr > 1, precips_arr, -1):
-        print(val)
+    # Select and label up the graph
+    graph = plt.subplot(2, 2, 2)
+    plt.title("Histogram of Precipitation")
+    graph.set_ylabel("Number of Days")
+    plt.xlabel("Precipitation (in)")
+
+    # Make a histogram of precipitation values
+    days, in_rain = np.histogram(precips, bins=np.linspace(start=0.0, stop=5.0, num=50))
+    graph.bar(in_rain[1:-1], days[1:], in_rain[1] - in_rain[0], align="edge")
 
     ######################################################################################
 
